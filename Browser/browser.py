@@ -16,12 +16,11 @@ class Browser():
         if self.browser_name == 'ie':
             browser_path = config.get("BROWSER PATH", "ie_path")
             browser = webdriver.Ie(executable_path=browser_path)
-            time.sleep(5)
+            time.sleep(5);
         elif self.browser_name == 'chrome':
             browser_path = config.get("BROWSER PATH", "chrome_path")
             print(browser_path)
             browser = webdriver.Chrome(browser_path)
-
         elif self.browser_name == 'firefox':
             browser_path = config.get("BROWSER PATH", "firefox_path")
             print(browser_path)

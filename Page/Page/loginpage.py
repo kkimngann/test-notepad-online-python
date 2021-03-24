@@ -5,8 +5,8 @@ class LoginPage():
     def __init__(self,browser):
         self.browser = browser
 
-    def input_phone_number(self, text):
-        element = self.browser.find_element(Locator.txt_phone)
+    def input_email(self, text):
+        element = self.browser.find_element(Locator.txt_email)
         self.browser.set_text_element(element, text)
         return True
 

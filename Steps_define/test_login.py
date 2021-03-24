@@ -29,26 +29,22 @@ def teardown():
     print('------------------------END TEST-------------------------')
     obj_browser.browser.quit()
 
-@given('Access Chotot website')
+@given('Access online notepad website')
 def function_given():
     obj_browser.browser.get(URL)
 
-@given('Choose button More')
-def choose_more():
-    page = HomePage(obj_browser)
-    page.choose_btn_more_menu()
 
-@given('Choose Login / Register')
+@given('Choose Register/Login')
 def choose_login():
     page = HomePage(obj_browser)
     page.choose_btn_login_register()
 
-@when('Input invalid <phone_number>')
-def input_phone(phone_number):
+@when('Input email <email>')
+def input_phone(email):
     page = LoginPage(obj_browser)
-    page.input_phone_number(phone_number)
+    page.input_email(email)
 
-@when('Input <password>')
+@when('Input password <password>')
 def input_pass(password):
     page = LoginPage(obj_browser)
     page.input_password(password)
