@@ -1,29 +1,27 @@
 # test-notepad-online-python
 ------------------Read me-------------------
+Setup Environment:
 Python 2.7
-
-Python packages:
-
-	Mako	1.1.2
-	MarkupSafe	1.1.1	
-	colorama	0.3.9	
-	lml	0.0.4	0.0.9
-	parse	1.15.0	
-	parse-type	0.5.2	
-	pip	9.0.1	
-	py	1.4.34	
-	pyserial 3.4
-	pytest	3.2.3	
-	pytest-bdd	3.2.1	
-	pytest-html	1.16.0	
-	pytest-metadata	1.5.0	
-	selenium 3.141.0	
-	setuptools	36.6.0	
-	six	1.14.0	
-	urllib3	1.25.8
-
-Run test:
+Set up Python and add new environment variable:
+    - C:\Python27
+    - C:\Python27\Scripts
+Install PyCharm IDE
+Setting Python interpreter and Vituralenv Environment
+Install pip
+Open command line in folder test-notepad-online-python
+Install packages in requirment.txt file with comment : pip install -r requirements.txt
+----------------------------------------------------------------------------------------
+Run test with command line:
 steps 1: Change chrome path in file config
-steps 2: Open command line in folder Test
-steps 3: Run: pytest --html=log.html Steps_define\test_login.py -s
-steps 4: Wait for done and check result
+steps 2: Open command line in folder test-notepad-online-python
+steps 3: Run: pytest --html=result.html Steps_define\test_login.py -s
+steps 4: Wait for done and check result.html
+
+Run test with Pycharm:
+steps 1: Change chrome path in file config
+steps 2: Add new config runner pytest:
+    - Target: Script path and choose file test_login.py
+    - Additional Argument: --html=result.html
+    - Python Interpreter: Python 2.7
+    - Working space: choose folder test-notepad-online-python
+steps 4: Choose button Run and wait for done and check result.html

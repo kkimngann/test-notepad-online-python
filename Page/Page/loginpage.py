@@ -20,7 +20,17 @@ class LoginPage():
         self.browser.click_element(element,2)
         return True
 
-    def get_error_message(self):
-        element = self.browser.find_element(Locator.message_error)
-        message = self.browser.get_text_element(element)
-        return message
+    def get_error_message(self,expected_message):
+        element = self.browser.find_element(Locator.message_error.replace("message",expected_message))
+        if element is not False:
+            message = self.browser.get_text_element(element)
+            return message
+        else:
+            return False
+
+    def is_disabled_button_login(self):
+        element = self.browser.find_element(Locator.btn_login)
+        if element is not False:
+            return not element.is_enabled()
+        else:
+            return False

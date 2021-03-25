@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 config = ConfigParser.RawConfigParser()
 config.read('auto_test.cfg')
+waiting_time = config.get('CONFIG','waiting_time')
 
 class Browser():
     def __init__(self,browser_name):
@@ -35,7 +36,7 @@ class Browser():
             print(browser_path)
             browser = webdriver.Safari(executable_path=browser_path)
 
-        browser.implicitly_wait(5)
+        browser.implicitly_wait(waiting_time)
         browser.maximize_window()
         return browser
 
@@ -58,6 +59,7 @@ class Browser():
             element.send_keys(Keys.CONTROL + 'a')
             element.send_keys(Keys.DELETE)
             element.send_keys(text)
+            time.sleep(2)
         except:
             return False
 
@@ -65,4 +67,4 @@ class Browser():
         try:
             return element.text
         except:
-            return ''
+            return False

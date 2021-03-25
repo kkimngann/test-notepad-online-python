@@ -6,17 +6,12 @@ class HomePage():
         self.browser = browser
 
 
-    def choose_btn_more_menu(self):
-        element = self.browser.find_element(Locator.btn_more_menu)
+    def choose_btn_register(self):
+        element = self.browser.find_element(Locator.btn_login_homepage)
         self.browser.click_element(element,2)
         return True
-
-    def choose_btn_login_register(self):
-        element = self.browser.find_element(Locator.btn_login_register)
-        self.browser.click_element(element,2)
+    def close_banner(self):
+        element = self.browser.find_element(Locator.btn_close_banner)
+        if element is not False:
+            self.browser.click_element(element, 2)
         return True
-
-    def check_login_success(self):
-        element_logout = self.browser.find_element(Locator.menu_logout)
-        element_setting = self.browser.find_element(Locator.menu_setting)
-        return (element_setting is not False) and (element_logout is not False)
